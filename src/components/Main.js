@@ -11,6 +11,8 @@ import {
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
+import MyTable from "./MyTable";
+
 const Main = () => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -57,6 +59,7 @@ const Main = () => {
             style={{ padding: 24, minHeight: 360 }}
           >
             Bill is a cat.
+            <MyTable />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

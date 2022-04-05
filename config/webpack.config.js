@@ -15,6 +15,21 @@ module.exports = (env) => ({
         type: "asset/resource",
       },
       {
+        test: /\.less$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(sa|sc|c)ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
