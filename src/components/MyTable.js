@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { Table, Input, Button, Popconfirm, Form } from "antd";
 const EditableContext = React.createContext(null);
 
+import SiteLayout from "./layout/SiteLayout";
+
 const EditableRow = ({ index, ...props }) => {
   const [form] = Form.useForm();
   return (
@@ -196,24 +198,26 @@ class EditableTable extends React.Component {
       };
     });
     return (
-      <div>
-        <Button
-          onClick={this.handleAdd}
-          type="primary"
-          style={{
-            marginBottom: 16,
-          }}
-        >
-          Add a row
-        </Button>
-        <Table
-          components={components}
-          rowClassName={() => "editable-row"}
-          bordered
-          dataSource={dataSource}
-          columns={columns}
-        />
-      </div>
+      <SiteLayout>
+        <div>
+          <Button
+            onClick={this.handleAdd}
+            type="primary"
+            style={{
+              marginBottom: 16,
+            }}
+          >
+            Add a row
+          </Button>
+          <Table
+            components={components}
+            rowClassName={() => "editable-row"}
+            bordered
+            dataSource={dataSource}
+            columns={columns}
+          />
+        </div>
+      </SiteLayout>
     );
   }
 }

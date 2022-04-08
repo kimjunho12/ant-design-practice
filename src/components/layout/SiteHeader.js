@@ -1,9 +1,13 @@
 import { Select } from "antd";
+import { Header } from "antd/lib/layout/layout";
 import React from "react";
 
 const SiteHeader = () => {
   return (
-    <React.Fragment>
+    <Header
+      className="site-layout-background"
+      style={{ padding: 0, textAlign: "right" }}
+    >
       <div className="logo" />
       <Select
         defaultValue={"한국어"}
@@ -37,7 +41,7 @@ const SiteHeader = () => {
         <Select.Option value="pb">포스코건설</Select.Option>
         <Select.Option value="pi">포스코인터네셔널</Select.Option>
       </Select>
-    </React.Fragment>
+    </Header>
   );
 };
 

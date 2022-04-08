@@ -2,12 +2,12 @@ import React from "react";
 
 import SiteLayout from "./layout/SiteLayout";
 
-const Main = () => {
+const Sample = () => {
   return (
     <SiteLayout>
-      <div>Main</div>
+      <div>Sample</div>
     </SiteLayout>
   );
 };
 
-export default Main;
+export default Sample;

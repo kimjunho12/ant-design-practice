@@ -1,5 +1,4 @@
 import { Menu } from "antd";
-import Sider from "antd/lib/layout/Sider";
 import MenuItem from "antd/lib/menu/MenuItem";
 import SubMenu from "antd/lib/menu/SubMenu";
 import React, { useState } from "react";
@@ -14,7 +13,11 @@ const SiteMenu = () => {
       mode="inline"
       style={{ height: "100%", borderRight: 0 }}
     >
-      <Menu.Item key="1" icon={<PieChartOutlined />}>
+      <Menu.Item
+        key="1"
+        icon={<PieChartOutlined />}
+        onClick={(e) => console.log(e.domEvent)}
+      >
         기준정보 관리
       </Menu.Item>
       <SubMenu key="sub2" title="평가계획 관리">

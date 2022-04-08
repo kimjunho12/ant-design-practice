@@ -2,9 +2,7 @@ import { Breadcrumb } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import React from "react";
 
-import MyTable from "../MyTable";
-
-const SiteContent = ({ test }) => {
+const SiteContent = ({ test, children }) => {
   return (
     <Content style={{ margin: "0 16px" }}>
       <Breadcrumb style={{ margin: "16px 0" }}>
@@ -15,8 +13,7 @@ const SiteContent = ({ test }) => {
         className="site-layout-background"
         style={{ padding: 24, minHeight: 360 }}
       >
-        Bill is a cat.
-        <MyTable />
+        {children}
       </div>
     </Content>
   );
