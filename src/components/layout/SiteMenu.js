@@ -4,8 +4,16 @@ import SubMenu from "antd/lib/menu/SubMenu";
 import React, { useState } from "react";
 
 import { PieChartOutlined } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
 
 const SiteMenu = () => {
+  const [breadcrumb, setBreadcrumb] = useState("");
+
+  const notifyMenuClicked = (e) => {
+    console.log(e.title, e.key, e.domEvent.target, e.item);
+    setBreadcrumb(e.domEvent.target);
+  };
+
   return (
     <Menu
       theme="dark"
@@ -13,12 +21,8 @@ const SiteMenu = () => {
       mode="inline"
       style={{ height: "100%", borderRight: 0 }}
     >
-      <Menu.Item
-        key="1"
-        icon={<PieChartOutlined />}
-        onClick={(e) => console.log(e.domEvent)}
-      >
-        기준정보 관리
+      <Menu.Item key="1" icon={<PieChartOutlined />}>
+        <NavLink to="/table">기준정보 관리</NavLink>
       </Menu.Item>
       <SubMenu key="sub2" title="평가계획 관리">
         <SubMenu key="sub2-1" title="평가계획 관리">
